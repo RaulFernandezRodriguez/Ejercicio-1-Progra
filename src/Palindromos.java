@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Palindromos {
     public static void main(String[] args){
         Scanner stdinput = new Scanner(System.in);
-        String frase = stdinput.next();
-        frase.trim();
+        String frase = stdinput.nextLine();
+        frase = frase.replaceAll(" +","");
         frase.toLowerCase();
         char[] registro = new char[frase.length()];
         boolean palindromo = true;
-        for(int i = 0, j = registro.length; i < registro.length; i++, j--){
+        for(int i = 0, j = frase.length() -1; i < registro.length; i++, j--){
             registro[i] = frase.charAt(j);
         }
         for(int x = 0; x < registro.length; x++){
