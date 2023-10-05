@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-//import java.util.StringUtils;
 
 public class Palindromos {
     public static void main(String[] args){
         Scanner stdinput = new Scanner(System.in);
         String frase = stdinput.nextLine();
         assert frase.length() > 0;
-        frase = frase.replaceAll(" +","").toLowerCase();
+        stdinput.close();
+        frase = frase.replaceAll(" +","").toLowerCase().replaceAll(",","").replace(".", "");
+        frase = frase.replaceAll("á", "a").replaceAll("é", "e").replaceAll("í", "i").replaceAll("ó", "o").replaceAll("ú", "u").replaceAll("ñ", "n");
         StringBuilder fraseInv = new StringBuilder();
         char[] registro = fraseInv.append(frase).reverse().toString().toCharArray();
         boolean palindromo = true;
